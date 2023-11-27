@@ -1,0 +1,13 @@
+
+.card{
+     width: 65%;
+     height: 25rem;
+     background: white;
+     color: black;
+     font-size: 30px;
+     margin: 0 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+}

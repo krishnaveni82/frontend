@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "name": "Product"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "category": {
+      "model": "category",
+      "via": "products"
+    },
+    "variants": {
+      "collection": "variant",
+      "via": "product"
+    },
+    "promo": {
+      "type": "boolean"
+    },
+    "promoImage": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "merchantLink": {
+      "type": "string",
+      "required": true
+    },
+    "shipping": {
+      "type": "string",
+      "required": true
+    },
+    "validUntil": {
+      "type": "datetime",
+      "required": true
+    },
+    "merchantName": {
+      "type": "string",
+      "required": true
+    },
+    "dealComment": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "status": {
+      "type": "boolean",
+      "required": true
+    }
+  }
+}
